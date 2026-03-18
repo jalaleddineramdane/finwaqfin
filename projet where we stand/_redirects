@@ -1,0 +1,8 @@
+# Force HTTPS
+http://finwaqfin.netlify.app/* https://finwaqfin.netlify.app/:splat 301!
+
+# Serve static HTML files directly (must come BEFORE the SPA catch-all)
+/privacy.html   /privacy.html   200
+
+# SPA fallback — all other paths serve index.html
+/*    /index.html   200

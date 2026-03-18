@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<meta name="description" content="فين واقفين؟ — منصة رقمية تفاعلية للتربية المدنية والمشاركة السياسية الواعية للشباب المغربي">
+<meta name="theme-color" content="#1B5E20">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="فين واقفين؟">
+<meta property="og:title" content="فين واقفين؟ — اكتشف الحزب المغربي الأقرب إلى قيمك">
+<meta property="og:description" content="اختبر قيمك السياسية واكتشف أي الأحزاب المغربية الثمانية يتوافق معك — Découvre quel parti marocain correspond à tes valeurs politiques.">
+<meta property="og:url" content="https://finwaqfin.netlify.app/">
+<meta property="og:image" content="https://finwaqfin.netlify.app/og-image-v2.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="فين واقفين؟ — منصة التربية المدنية للشباب المغربي">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="فين واقفين؟">
+<meta property="og:locale" content="ar_MA">
+<meta property="og:locale:alternate" content="fr_MA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@feinwaqfin">
+<meta name="twitter:title" content="فين واقفين؟ — اكتشف الحزب المغربي الأقرب لك">
+<meta name="twitter:description" content="اختبر قيمك واكتشف أي الأحزاب المغربية يتوافق معك — Découvre quel parti marocain correspond à tes valeurs 🇲🇦">
+<meta name="twitter:image" content="https://finwaqfin.netlify.app/og-image-v2.png">
+<meta name="twitter:image:alt" content="فين واقفين؟ — Fein Waqfin?">
+<title>فين واقفين؟ — Où en sont-ils?</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fw-style.css">
+<link rel="canonical" href="https://finwaqfin.netlify.app/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "فين واقفين؟",
+  "alternateName": "Où en sont-ils?",
+  "description": "منصة رقمية تفاعلية للتربية المدنية والمشاركة السياسية الواعية للشباب المغربي",
+  "url": "https://finwaqfin.netlify.app/",
+  "inLanguage": ["ar", "fr"],
+  "applicationCategory": "EducationApplication",
+  "author": {
+    "@type": "Person",
+    "name": "Jalal Eddine Ramdane"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Moroccan youth aged 18-30"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ─── SKIP NAV (accessibility) ─── -->
+<a href="#quiz" class="skip-nav"><span class="ar-only">تخطى إلى المحتوى الرئيسي</span><span class="fr-only">Passer au contenu principal</span></a>
+
+<!-- ─── SCROLL PROGRESS ─── -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="return-banner" id="returnBanner" style="display:none;"></div>
+
+<!-- ─── NAV ─── -->
+<nav class="nav" id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <img src="logo-nav.png" class="logo-icon" alt="فين واقفين؟">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#quiz"    id="nav-quiz"    class="active"><span class="ar-only">الاختبار</span><span class="fr-only">Quiz</span></a></li>
+    <li><a href="#compare" id="nav-compare"><span class="ar-only">المقارنة</span><span class="fr-only">Comparer</span></a></li>
+    <li><a href="#parties" id="nav-parties"><span class="ar-only">الأحزاب</span><span class="fr-only">Partis</span></a></li>
+    <li><a href="#about"   id="nav-about"><span class="ar-only">من نحن</span><span class="fr-only">About</span></a></li>
+    <li><a href="#youth-impact" id="nav-yimp"><span class="ar-only">الأثر</span><span class="fr-only">Impact</span></a></li>
+  </ul>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn" aria-label="Changer la langue / تغيير اللغة">FR</button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="القائمة">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── MOBILE MENU ─── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#quiz"    onclick="toggleMenu()"><span class="ar-only">الاختبار التفاعلي</span><span class="fr-only">Quiz</span></a>
+  <a href="#compare" onclick="toggleMenu()"><span class="ar-only">مقارنة الأحزاب</span><span class="fr-only">Comparer</span></a>
+  <a href="#parties" onclick="toggleMenu()"><span class="ar-only">الأحزاب</span><span class="fr-only">Partis</span></a>
+  <a href="#about"   onclick="toggleMenu()"><span class="ar-only">من نحن</span><span class="fr-only">About</span></a>
+  <a href="#youth-impact" onclick="toggleMenu()"><span class="ar-only">الأثر</span><span class="fr-only">Impact</span></a>
+</div>
+
+<main>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="hero">
+  <div class="hero-cursor-glow" id="heroCursorGlow"></div>
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left: text + region detail -->
+      <div class="hero-content">
+        <div class="hero-flag"><span class="f-red"></span><span class="f-green"></span></div>
+        <div class="hero-badge">🗳️ <span class="ar-only">جائزة المغرب للشباب 2026 — الطبعة الثانية</span><span class="fr-only">Prix Maroc Jeunesse 2026 — 2ème édition</span></div>
+        <h1 class="fade-in"><em>فين واقفين؟</em></h1>
+        <p class="hero-tagline fade-in fade-in-2">
+          <span class="ar-only">منصة <strong>"فين واقفين؟"</strong> خُصصت لتكون بوصلتك المحايدة. نحن نؤمن أن التغيير الإيجابي يبدأ بمواطن مطّلع على خياراته، قادر على التمييز بين البرامج، ومستعد للمشاركة بإيجابية في بناء مستقبله.</span>
+          <span class="fr-only">La plateforme <strong>« فين واقفين&#8239;? »</strong> est conçue pour être votre boussole neutre. Nous croyons que le changement positif commence par un citoyen informé de ses choix, capable de distinguer entre les programmes, et prêt à participer activement à la construction de son avenir.</span>
+        </p>
+        <div class="hero-actions fade-in fade-in-3">
+          <a href="#quiz"    class="btn btn-primary">✦ <span class="ar-only">ابدأ الاختبار</span><span class="fr-only">Commencer le Quiz</span></a>
+          <a href="#compare" class="btn btn-secondary"><span class="ar-only">قارن الأحزاب</span><span class="fr-only">Comparer</span></a>
+        </div>
+
+        <!-- Stats (hidden when region is selected) -->
+        <div class="hero-stats fade-in fade-in-3" id="heroStats">
+          <div class="hero-stat"><div class="num">8</div><div class="lbl"><span class="ar-only">أحزاب رئيسية</span><span class="fr-only">Partis</span></div></div>
+          <div class="hero-stat"><div class="num">12</div><div class="lbl"><span class="ar-only">جهة جغرافية</span><span class="fr-only">Régions</span></div></div>
+          <div class="hero-stat"><div class="num">6</div><div class="lbl"><span class="ar-only">مجالات مقارنة</span><span class="fr-only">Domaines</span></div></div>
+          <div class="hero-stat"><div class="num" id="heroCount">—</div><div class="lbl"><span class="ar-only">اختبار مكتمل</span><span class="fr-only">Tests effectués</span></div></div>
+        </div>
+
+        <!-- Region detail panel (shown when region is clicked on map) -->
+        <div class="hero-region-detail" id="heroRegionDetail"></div>
+      </div>
+
+      <!-- Right: floating SVG map -->
+      <div class="hero-vis">
+        <div class="hero-map-wrap">
+          <svg id="heroMap" viewBox="0 0 500 540" xmlns="http://www.w3.org/2000/svg">
+            <!-- PAM: #86EFAC -->
+            <path class="hm-region" data-id="TTA" fill="#86EFAC" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 407.1 34.9 L 406.9 47.1 L 400.8 48.7 L 397.5 51.8 L 394.4 49.4 L 388.8 54.5 L 379.9 52.6 L 378.1 48.1 L 371.1 49.6 L 366.3 51.9 L 366.2 57.6 L 363.3 60.2 L 358.9 59.4 L 359.1 56.7 L 355.9 55.6 L 354.0 52.6 L 348.4 52.1 L 348.1 44.8 L 338.7 41.7 L 334.4 42.2 L 343.8 13.0 L 348.3 13.4 L 359.6 8.0 L 364.5 21.9 L 378.3 33.5 L 390.6 36.8 L 403.9 32.6 L 407.1 34.9 Z"/>
+            <path class="hm-region" data-id="MS"  fill="#86EFAC" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 306.1 171.7 L 302.5 175.6 L 294.1 178.2 L 290.2 182.2 L 286.9 180.9 L 281.2 190.0 L 277.5 189.0 L 270.6 191.7 L 261.7 190.3 L 259.3 193.5 L 256.7 187.7 L 250.9 193.2 L 244.2 193.8 L 241.5 190.8 L 238.2 192.5 L 235.3 190.9 L 230.8 194.4 L 226.7 188.1 L 227.6 175.2 L 226.4 172.3 L 231.2 162.0 L 243.7 145.1 L 242.8 138.3 L 244.6 134.1 L 243.0 131.9 L 249.8 125.4 L 252.2 127.2 L 251.0 129.5 L 253.6 132.6 L 261.7 132.9 L 264.9 140.6 L 278.1 133.3 L 281.7 122.1 L 293.0 134.6 L 300.3 134.6 L 301.6 136.8 L 308.1 139.6 L 308.1 149.8 L 311.6 157.7 L 310.2 159.8 L 303.9 159.7 L 302.0 162.3 L 307.6 167.0 L 306.1 171.7 Z"/>
+            <path class="hm-region" data-id="DT"  fill="#86EFAC" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 328.2 237.1 L 330.0 230.9 L 328.7 223.0 L 331.1 220.9 L 327.3 221.1 L 327.0 217.5 L 324.0 214.0 L 326.3 210.9 L 321.9 205.8 L 317.3 207.2 L 315.8 206.0 L 315.2 210.4 L 306.8 208.8 L 302.8 214.5 L 302.6 218.4 L 300.5 215.4 L 292.8 214.5 L 294.2 212.1 L 291.0 206.2 L 296.1 203.0 L 294.5 196.4 L 290.3 196.0 L 292.7 191.7 L 289.6 191.8 L 289.3 182.3 L 294.1 178.2 L 302.5 175.6 L 306.1 171.7 L 311.4 174.8 L 319.7 174.5 L 320.6 170.2 L 342.3 160.6 L 347.2 156.4 L 347.6 153.5 L 345.1 151.9 L 346.4 146.6 L 354.8 142.7 L 358.3 143.5 L 355.6 135.1 L 361.1 132.9 L 362.5 122.1 L 370.1 116.1 L 371.8 112.4 L 376.9 111.8 L 378.6 118.6 L 387.4 119.6 L 395.3 129.3 L 401.2 129.5 L 404.2 132.2 L 407.4 142.1 L 409.2 142.0 L 409.2 144.1 L 414.3 144.2 L 412.4 146.4 L 413.3 147.4 L 416.5 146.1 L 421.8 147.5 L 426.0 145.0 L 423.7 152.3 L 426.0 158.0 L 428.4 157.0 L 424.3 161.5 L 411.8 164.4 L 412.4 172.9 L 408.2 176.5 L 408.7 182.5 L 410.8 180.6 L 412.5 183.5 L 412.6 180.8 L 415.8 186.4 L 412.3 192.4 L 411.8 198.8 L 392.1 203.5 L 383.7 212.0 L 373.7 217.1 L 363.5 225.3 L 354.7 239.9 L 351.1 238.1 L 349.4 238.9 L 350.0 236.4 L 348.0 235.5 L 328.2 237.1 Z"/>
+            <path class="hm-region" data-id="GON" fill="#86EFAC" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 258.9 320.4 L 242.9 309.4 L 235.2 311.7 L 225.6 302.9 L 221.9 303.7 L 214.0 297.8 L 185.7 300.3 L 176.9 297.9 L 173.8 295.9 L 168.0 284.1 L 176.3 280.7 L 189.2 265.7 L 206.0 255.9 L 215.0 246.0 L 221.2 234.9 L 221.7 239.2 L 224.8 237.4 L 224.1 240.1 L 226.1 242.2 L 229.7 240.5 L 232.4 242.8 L 231.9 240.5 L 233.4 241.7 L 234.7 239.9 L 236.5 242.2 L 243.2 239.5 L 246.8 243.4 L 249.0 250.4 L 246.4 255.0 L 246.3 253.7 L 244.2 254.4 L 245.4 263.9 L 247.5 266.3 L 251.5 266.7 L 261.5 280.6 L 261.5 316.0 L 261.1 302.9 L 257.0 302.9 L 258.9 320.4 Z"/>
+            <path class="hm-region" data-id="LSH" fill="#86EFAC" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 258.9 320.4 L 261.1 320.7 L 260.9 359.3 L 160.9 359.5 L 160.9 413.2 L 153.5 411.6 L 143.0 413.4 L 127.8 408.6 L 110.7 413.2 L 99.0 410.1 L 86.1 412.3 L 74.7 404.8 L 76.4 382.9 L 86.3 359.8 L 87.1 353.2 L 95.8 345.0 L 102.2 343.3 L 114.3 334.4 L 126.4 301.8 L 129.8 299.9 L 133.9 292.8 L 158.9 288.3 L 168.0 284.1 L 173.8 295.9 L 176.9 297.9 L 185.7 300.3 L 214.0 297.8 L 221.9 303.7 L 225.6 302.9 L 235.2 311.7 L 242.9 309.4 L 258.9 320.4 Z"/>
+            <!-- RNI: #22C55E -->
+            <path class="hm-region" data-id="OR"  fill="#22C55E" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 424.3 161.5 L 428.4 157.0 L 426.0 158.0 L 423.7 152.3 L 426.0 145.0 L 421.8 147.5 L 416.5 146.1 L 413.3 147.4 L 412.4 146.4 L 414.3 144.2 L 409.2 144.1 L 409.2 142.0 L 407.4 142.1 L 404.2 132.2 L 401.2 129.5 L 413.7 112.0 L 421.6 113.2 L 434.6 109.0 L 432.4 104.5 L 424.1 96.7 L 430.5 87.6 L 422.8 87.1 L 416.3 82.4 L 406.1 93.9 L 408.0 95.2 L 406.5 96.9 L 405.6 94.7 L 403.4 96.7 L 400.0 96.3 L 398.1 91.3 L 403.0 88.8 L 405.0 80.2 L 407.0 78.8 L 407.3 71.4 L 404.9 70.8 L 404.3 68.0 L 406.8 66.7 L 406.2 62.7 L 409.4 59.0 L 408.6 56.3 L 412.6 55.8 L 414.1 53.3 L 413.7 48.1 L 407.2 46.4 L 407.1 34.9 L 410.6 31.6 L 421.7 35.4 L 429.3 31.9 L 432.9 26.0 L 432.9 31.6 L 436.1 34.5 L 433.9 33.0 L 435.3 37.4 L 439.5 38.1 L 436.2 34.5 L 442.4 39.0 L 445.9 39.1 L 449.1 36.8 L 453.0 37.9 L 469.7 51.8 L 466.5 56.2 L 471.3 61.1 L 468.4 64.6 L 472.6 75.2 L 471.9 87.3 L 469.8 90.0 L 474.0 93.4 L 471.8 105.2 L 477.7 112.7 L 477.5 115.8 L 475.6 116.9 L 480.5 124.7 L 492.0 132.9 L 484.5 139.5 L 484.7 144.0 L 482.9 145.4 L 486.3 145.3 L 487.4 147.3 L 485.8 148.3 L 474.5 148.0 L 461.4 144.8 L 435.6 147.3 L 434.0 150.3 L 437.2 158.7 L 424.3 161.5 Z"/>
+            <path class="hm-region" data-id="FM"  fill="#22C55E" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 362.3 60.1 L 365.8 58.6 L 367.1 51.1 L 375.2 48.5 L 378.1 48.1 L 380.1 52.7 L 388.8 54.5 L 394.4 49.4 L 397.5 51.8 L 407.2 46.4 L 413.7 48.1 L 414.1 53.3 L 412.6 55.8 L 408.6 56.3 L 409.4 59.0 L 406.2 62.7 L 406.8 66.7 L 404.3 68.0 L 404.9 70.8 L 407.3 71.4 L 407.0 78.8 L 405.0 80.2 L 403.0 88.8 L 398.1 91.3 L 398.5 95.0 L 402.9 96.8 L 405.6 94.7 L 406.6 96.8 L 408.0 95.2 L 406.1 93.9 L 416.3 82.4 L 422.8 87.1 L 430.5 87.6 L 424.1 96.7 L 432.4 104.5 L 434.6 109.0 L 421.6 113.2 L 414.5 111.5 L 400.1 129.8 L 395.3 129.3 L 387.4 119.6 L 378.6 118.6 L 376.9 111.8 L 371.2 112.7 L 367.5 118.7 L 363.5 120.4 L 364.5 118.1 L 361.8 112.4 L 363.3 109.3 L 358.3 109.5 L 356.5 103.6 L 347.0 97.6 L 350.3 86.9 L 347.5 83.6 L 349.1 81.0 L 345.2 75.3 L 347.9 71.4 L 348.7 73.1 L 350.7 72.7 L 350.6 74.6 L 357.7 73.7 L 359.1 69.8 L 355.8 65.3 L 359.9 63.9 L 362.3 60.1 Z"/>
+            <path class="hm-region" data-id="RSK" fill="#22C55E" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 334.4 42.2 L 338.7 41.7 L 348.1 44.8 L 348.4 52.1 L 354.0 52.6 L 355.9 55.6 L 359.1 56.7 L 358.9 59.4 L 362.3 60.1 L 359.9 63.9 L 355.8 65.3 L 359.1 69.8 L 357.7 73.7 L 350.6 74.6 L 350.7 72.7 L 348.7 73.1 L 347.9 71.4 L 345.3 74.6 L 349.1 81.0 L 347.5 83.8 L 350.3 86.9 L 347.0 97.6 L 348.5 103.3 L 339.6 104.3 L 335.4 102.9 L 335.8 99.5 L 331.1 97.9 L 330.2 106.1 L 325.4 110.0 L 317.7 107.3 L 316.8 98.0 L 318.9 95.7 L 314.1 94.2 L 312.9 95.7 L 310.5 87.7 L 307.9 85.2 L 316.9 78.1 L 332.6 47.1 L 333.3 49.3 L 334.2 48.3 L 332.6 47.0 L 334.4 42.2 Z"/>
+            <path class="hm-region" data-id="BMK" fill="#22C55E" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 364.1 120.1 L 362.4 122.4 L 361.1 132.9 L 355.6 135.1 L 358.3 143.5 L 351.4 143.6 L 345.8 147.4 L 345.1 151.9 L 347.6 153.5 L 347.2 156.4 L 341.2 161.3 L 320.6 170.2 L 319.7 174.5 L 307.9 173.8 L 306.1 171.7 L 307.6 167.0 L 305.9 167.0 L 302.1 161.6 L 304.8 159.4 L 310.2 159.8 L 311.6 157.7 L 308.1 149.8 L 307.6 139.9 L 311.6 134.4 L 312.0 128.5 L 310.0 126.2 L 311.4 117.3 L 316.1 107.4 L 321.7 107.7 L 325.7 110.0 L 330.2 106.1 L 331.1 97.9 L 335.8 99.5 L 335.6 103.0 L 347.4 104.2 L 348.1 98.3 L 356.5 103.6 L 358.3 109.5 L 363.3 109.3 L 361.8 112.4 L 364.1 120.1 Z"/>
+            <path class="hm-region" data-id="CS"  fill="#22C55E" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 249.8 125.4 L 259.5 115.8 L 265.8 106.0 L 268.2 106.3 L 272.6 102.1 L 295.5 92.9 L 304.8 86.2 L 307.9 85.2 L 309.9 86.5 L 312.9 95.7 L 314.1 94.2 L 318.9 95.7 L 316.8 98.0 L 317.6 106.7 L 311.4 117.3 L 310.0 126.2 L 312.0 128.5 L 311.6 134.4 L 307.6 139.9 L 300.3 134.6 L 292.8 134.5 L 281.7 122.1 L 278.1 133.3 L 264.9 140.6 L 262.4 133.7 L 253.6 132.6 L 251.0 129.5 L 252.2 127.2 L 249.8 125.4 Z"/>
+            <path class="hm-region" data-id="SM"  fill="#22C55E" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 261.5 280.6 L 251.5 266.7 L 247.5 266.3 L 245.4 263.9 L 244.2 254.4 L 246.3 253.7 L 246.4 255.0 L 249.0 250.4 L 245.0 241.1 L 241.7 239.2 L 236.5 242.2 L 234.7 239.9 L 233.4 241.7 L 231.9 240.5 L 231.7 242.9 L 230.2 240.6 L 225.1 241.6 L 224.8 237.4 L 221.7 239.2 L 221.2 234.7 L 228.7 225.0 L 233.5 208.3 L 227.9 200.5 L 224.8 199.9 L 227.4 193.3 L 227.0 189.0 L 230.8 194.4 L 235.3 190.9 L 238.2 192.5 L 241.5 190.8 L 244.2 193.8 L 250.9 193.2 L 256.7 187.7 L 259.3 193.5 L 261.7 190.3 L 270.6 191.7 L 277.5 189.0 L 282.2 189.6 L 285.0 183.1 L 288.1 181.1 L 290.2 185.5 L 289.6 191.8 L 292.7 191.7 L 290.3 196.0 L 294.5 196.4 L 296.1 203.0 L 291.0 206.2 L 294.2 212.1 L 292.8 214.5 L 300.5 215.4 L 302.6 218.4 L 302.8 214.5 L 306.8 208.8 L 315.2 210.4 L 315.8 206.0 L 317.3 207.2 L 321.9 205.8 L 326.3 210.9 L 324.0 214.0 L 327.0 217.5 L 327.3 221.1 L 331.1 220.9 L 328.7 223.0 L 329.5 234.3 L 326.0 238.8 L 318.1 240.8 L 308.0 238.6 L 300.2 243.6 L 293.2 244.1 L 268.6 263.3 L 261.5 266.7 L 261.5 280.6 Z"/>
+            <path class="hm-region" data-id="DOD" fill="#22C55E" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" d="M 74.1 403.4 L 77.7 407.7 L 86.1 412.3 L 99.0 410.1 L 110.7 413.2 L 127.8 408.6 L 143.0 413.4 L 153.5 411.6 L 160.9 413.2 L 160.8 444.0 L 142.8 450.3 L 130.9 458.6 L 126.8 465.1 L 130.9 513.6 L 12.7 513.7 L 9.3 526.6 L 9.7 532.0 L 8.0 529.6 L 12.4 497.6 L 17.7 485.4 L 20.7 482.3 L 26.1 481.7 L 30.4 473.1 L 32.5 462.4 L 36.9 459.0 L 35.1 456.0 L 41.7 445.6 L 42.0 442.4 L 50.0 431.9 L 48.8 432.2 L 48.2 428.8 L 44.9 431.9 L 43.0 437.3 L 41.0 437.8 L 45.9 430.0 L 53.3 424.8 L 64.5 411.6 L 70.8 407.9 L 74.1 403.4 Z"/>
+          </svg>
+          <div id="mapCursorGlow" class="map-cursor-glow"></div>
+          <div id="heroMapTip" class="hero-map-tip" style="display:none;"></div>
+          <!-- Legend -->
+          <div class="hero-map-legend">
+            <div class="hml-item"><span class="hml-dot" style="background:#22C55E;"></span><span>RNI — 7 <span class="ar-only">جهة</span><span class="fr-only">régions</span></span></div>
+            <div class="hml-item"><span class="hml-dot" style="background:#86EFAC; outline:1px solid rgba(31,41,55,0.4);"></span><span>PAM — 5 <span class="ar-only">جهة</span><span class="fr-only">régions</span></span></div>
+          </div>
+          <div class="map-click-hint">
+            <span class="ar-only">🖱 انقر على جهتك لعرض التفاصيل</span>
+            <span class="fr-only">🖱 Cliquez sur votre région pour les détails</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUIZ ─── -->
+<section class="section js-reveal" id="quiz">
+  <div class="container">
+    <div class="sec-label">✦ <span class="ar-only">الاختبار التفاعلي</span><span class="fr-only">Quiz Interactif</span></div>
+    <h2 class="sec-title"><span class="ar-only">أي حزب يتوافق مع قيمك؟</span><span class="fr-only">Quel parti correspond à vos valeurs&#8239;?</span></h2>
+    <p class="sec-sub" style="margin-bottom:32px;">
+      <span class="ar-only">أجب على الأسئلة حول أولوياتك، وسنوضح لك أي الأحزاب المغربية تتقاطع برامجها الرسمية مع قناعاتك.</span>
+      <span class="fr-only">Répondez aux questions sur vos priorités pour découvrir quel parti marocain correspond à vos valeurs.</span>
+    </p>
+    <div class="quiz-wrapper">
+      <div class="quiz-header">
+        <h3><span class="ar-only">اعرف خياراتك · Connaissez vos options</span></h3>
+        <p><span class="ar-only">المعرفة قبل القرار</span><span class="fr-only">La connaissance avant la décision</span></p>
+      </div>
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-ring-wrap">
+          <svg class="progress-ring" width="60" height="60" viewBox="0 0 60 60">
+            <circle class="ring-track" cx="30" cy="30" r="26" fill="none"/>
+            <circle class="ring-fill" id="progressRing" cx="30" cy="30" r="26" fill="none"
+              stroke-dasharray="163.36" stroke-dashoffset="163.36"/>
+          </svg>
+          <span class="ring-count" id="progressCount">1/10</span>
+        </div>
+        <div class="progress-meta">
+          <span class="p-label"><span class="ar-only">التقدم في الاختبار</span><span class="fr-only">Progression</span></span>
+        </div>
+      </div>
+      <div class="quiz-body" id="quizBody">
+        <div style="padding:20px;color:#888;text-align:center;">جارٍ التحميل... / Chargement...</div>
+      </div>
+      <div class="quiz-results" id="quizResults"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COMPARISON ─── -->
+<section class="section section-alt js-reveal" id="compare">
+  <div class="container">
+    <div class="sec-label">✦ <span class="ar-only">أداة المقارنة</span><span class="fr-only">Outil de comparaison</span></div>
+    <h2 class="sec-title"><span class="ar-only">قارن البرامج الحزبية</span><span class="fr-only">Comparer les programmes</span></h2>
+    <p class="sec-sub" style="margin-bottom:32px;">
+      <span class="ar-only">اختر من 2 إلى 3 أحزاب لمقارنة مواقفها الرسمية جنبًا إلى جنب في ستة مجالات رئيسية.</span>
+      <span class="fr-only">Sélectionnez 2 à 3 partis pour comparer leurs programmes officiels dans 6 domaines.</span>
+    </p>
+    <div class="party-selector" id="partySelector"></div>
+    <p class="compare-scroll-hint"><span class="ar-only">← اسحب الجدول لرؤية المزيد</span><span class="fr-only">← Faites défiler le tableau</span></p>
+    <div id="compareOutput">
+      <div class="compare-hint">⬆ <span class="ar-only">اختر حزبين على الأقل لعرض المقارنة</span><span class="fr-only">Sélectionnez au moins 2 partis</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PARTIES ─── -->
+<section class="section js-reveal" id="parties">
+  <div class="container">
+    <div class="sec-label">✦ <span class="ar-only">الأحزاب السياسية</span><span class="fr-only">Partis Politiques</span></div>
+    <h2 class="sec-title"><span class="ar-only">الأحزاب الرئيسية في المغرب</span><span class="fr-only">Principaux Partis au Maroc</span></h2>
+    <p class="sec-sub" style="margin-bottom:36px;">
+      <span class="ar-only">يضم المغرب 33 حزبًا مسجلًا. نستعرض هنا أبرز 8 أحزاب وفق بياناتها الرسمية، بشكل متوازن وموضوعي تامّ.</span>
+      <span class="fr-only">Le Maroc compte 33 partis enregistrés. Présentation objective des 8 principaux partis selon leurs programmes officiels.</span>
+    </p>
+    <div class="parties-grid" id="partiesGrid"></div>
+  </div>
+</section>
+
+<!-- ─── TIMELINE ─── -->
+<section class="section js-reveal" id="timeline">
+  <div class="container">
+    <div class="sec-label">✦ <span class="ar-only">التاريخ الانتخابي</span><span class="fr-only">Histoire électorale</span></div>
+    <h2 class="sec-title"><span class="ar-only">المسار الديمقراطي للمغرب</span><span class="fr-only">Le parcours démocratique du Maroc</span></h2>
+    <p class="sec-sub" style="margin-bottom:36px;">
+      <span class="ar-only">من الاستقلال إلى الإصلاحات الدستورية — أبرز المحطات السياسية في تاريخ المغرب الحديث</span>
+      <span class="fr-only">De l'indépendance aux réformes constitutionnelles — les grandes étapes politiques du Maroc moderne</span>
+    </p>
+    <div class="timeline-scroll" id="electionTimeline"></div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="section section-alt js-reveal" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="sec-label">✦ <span class="ar-only">من نحن</span><span class="fr-only">Qui sommes-nous</span></div>
+        <h2 class="sec-title"><span class="ar-only">مهمتنا: تمكين الاختيارات المستنيرة</span><span class="fr-only">Notre mission&#8239;: autonomiser les choix éclairés</span></h2>
+        <p>
+          <span class="ar-only">يُعاني كثير من الشباب المغربي من صعوبة الوصول إلى معلومات سياسية واضحة ومحايدة. مع وجود 33 حزبًا سياسيًا مسجلًا، يصبح التوجه في المشهد السياسي تحديًا حقيقيًا.</span>
+          <span class="fr-only">Beaucoup de jeunes Marocains ont du mal à accéder à des informations politiques claires et neutres. Avec 33 partis enregistrés, s'orienter dans le paysage politique est un vrai défi.</span>
+        </p>
+        <p>
+          <span class="ar-only"><strong>فين واقفين؟</strong> ليست منصة انتقادية ولا موالية لأي طرف — بل هي أداة تعليمية مدنية تضع بين يديك المعلومات لاتخاذ قرارك بحرية ووعي.</span>
+          <span class="fr-only"><strong>« فين واقفين&#8239;? »</strong> n'est pas une plateforme critique ni partisane — c'est un outil éducatif civique qui vous donne les informations pour faire vos choix librement.</span>
+        </p>
+        <div class="about-quote">
+          <span class="ar-only">"صوتك مهم — الديمقراطية الحقيقية تبدأ بمواطن مطلع"</span>
+          <span class="fr-only">"Votre voix compte — la vraie démocratie commence par un citoyen informé"</span>
+        </div>
+        <p>
+          <span class="ar-only">أنشأت هذه المنصة <strong>جلال الدين رمضان</strong>، طالب طب في السنة الرابعة بالجامعة الدولية للرباط، إيمانًا بأن المشاركة المدنية الواعية للشباب هي ركيزة أساسية لمستقبل المغرب. جميع المعلومات مستمدة من البرامج الرسمية المعلنة.</span>
+          <span class="fr-only">Créée par <strong>Jalal Eddine Ramdane</strong>, étudiant en médecine en 4ème année à l'UIR. Toutes les informations proviennent des programmes officiels des partis.</span>
+        </p>
+      </div>
+      <div>
+        <div class="about-stat-grid">
+          <div class="about-stat"><div class="asn">33</div><div class="asl"><span class="ar-only">حزبًا سياسيًا مسجلًا</span><span class="fr-only">partis enregistrés</span></div></div>
+          <div class="about-stat"><div class="asn">8</div><div class="asl"><span class="ar-only">أحزاب رئيسية مُغطّاة</span><span class="fr-only">partis couverts</span></div></div>
+          <div class="about-stat"><div class="asn">18-30</div><div class="asl"><span class="ar-only">الفئة العمرية المستهدفة</span><span class="fr-only">tranche d'âge cible</span></div></div>
+          <div class="about-stat"><div class="asn">100%</div><div class="asl"><span class="ar-only">محايدة وغير منحازة</span><span class="fr-only">neutre et non partisane</span></div></div>
+        </div>
+        <div class="about-note"><span class="ar-only">✦ جميع المعلومات مستمدة من البرامج الرسمية المعلنة للأحزاب والوثائق العمومية. هدفنا تربوي بحت.</span><span class="fr-only">✦ Toutes les informations proviennent des programmes officiels. Notre objectif est strictement éducatif.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── YOUTH IMPACT / WHY THIS MATTERS ─── -->
+<section class="section yimp-section js-reveal" id="youth-impact">
+  <div class="container" style="max-width:960px;">
+    <div class="yimp-box">
+
+      <!-- Header -->
+      <div class="yimp-header">
+        <div class="yimp-icon">💡</div>
+        <div>
+          <h2 class="yimp-title">
+            <span class="ar-only">كيف يمكن لهذا المشروع أن يساعد الشباب المغربي&#8239;؟</span>
+            <span class="fr-only">Comment ce projet peut aider la jeunesse marocaine&#8239;?</span>
+          </h2>
+          <p class="yimp-subtitle">
+            <span class="ar-only">أرقام تقول كل شيء عن الشباب المغربي والمشاركة السياسية</span>
+            <span class="fr-only">Des chiffres qui parlent d'eux-mêmes sur la jeunesse et la participation politique</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Stat Cards grid (3 cards) -->
+      <div class="yimp-grid yimp-grid--3">
+
+        <div class="yimp-card">
+          <div class="yimp-num">33.6%</div>
+          <div class="yimp-tag"><span class="ar-only">فقط من الشباب (18–24) مسجلون للتصويت</span><span class="fr-only">des 18–24 ans seulement inscrits</span></div>
+          <p class="yimp-desc"><span class="ar-only">أقل من 1 من كل 3 شباب مغربي مسجل للتصويت (المصدر: NDI). "فين واقفين؟" تُرشدهم نحو المشاركة.</span><span class="fr-only">Moins d'1 jeune Marocain sur 3 est inscrit pour voter (source&#8239;: NDI). Cette plateforme les guide vers la participation.</span></p>
+        </div>
+
+        <div class="yimp-card">
+          <div class="yimp-num">#1</div>
+          <div class="yimp-tag"><span class="ar-only">أداة تغيير سلمية وفعّالة</span><span class="fr-only">Outil de changement pacifique</span></div>
+          <p class="yimp-desc"><span class="ar-only">صوتك المبني على المعرفة يُرسل رسالة واضحة للنخب السياسية: الشباب يقظ ومُطّلع.</span><span class="fr-only">Votre vote éclairé envoie un message clair aux élites politiques&#8239;: la jeunesse est vigilante.</span></p>
+        </div>
+
+        <div class="yimp-card">
+          <div class="yimp-num">100%</div>
+          <div class="yimp-tag"><span class="ar-only">محايدة وتعليمية وبدون إعلانات</span><span class="fr-only">neutre, éducatif, sans pub</span></div>
+          <p class="yimp-desc"><span class="ar-only">لا نموّل من أحزاب ولا نربح من إعلانات — هدفنا الوحيد مواطن مُطّلع.</span><span class="fr-only">Aucun financement partisan, aucune pub — notre seul objectif&#8239;: un citoyen informé.</span></p>
+        </div>
+
+      </div>
+
+      <!-- Manifesto footer -->
+      <div class="yimp-manifesto">
+        <div class="yimp-manifesto-inner">
+          <p class="yimp-manifesto-body">
+            <span class="ar-only">منصة رقمية تفاعلية للتربية المدنية والمشاركة السياسية الواعية للشباب المغربي. اكتشف القيم والبرامج التي تتوافق مع قناعاتك.</span>
+            <span class="fr-only">Plateforme numérique interactive d'éducation civique pour la jeunesse marocaine. Découvrez les partis qui correspondent à vos valeurs.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Sources + Privacy footnote -->
+      <div class="yimp-footnote">
+        <span class="ar-only">
+          المصادر: <a href="https://data.ipu.org/parliament/MA/MA-LC01/election/MA-LC01-E20210908/" target="_blank" rel="noopener">IPU/ANIE — انتخابات 2021</a> ·
+          <a href="https://www.ndi.org/sites/default/files/MENA%20Voter%20Registration_EN_Morocco.pdf" target="_blank" rel="noopener">NDI — تسجيل الشباب</a> ·
+          <a href="https://www.maroc.ma/en/morocco/political-parties-and-unions" target="_blank" rel="noopener">maroc.ma — الأحزاب</a>
+        </span>
+        <span class="fr-only">
+          Sources : <a href="https://data.ipu.org/parliament/MA/MA-LC01/election/MA-LC01-E20210908/" target="_blank" rel="noopener">IPU/ANIE — Élections 2021</a> ·
+          <a href="https://www.ndi.org/sites/default/files/MENA%20Voter%20Registration_EN_Morocco.pdf" target="_blank" rel="noopener">NDI — Inscription jeunes</a> ·
+          <a href="https://www.maroc.ma/en/morocco/political-parties-and-unions" target="_blank" rel="noopener">maroc.ma — Partis</a>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── IMPACT ─── -->
+<section class="section js-reveal" id="impact">
+  <div class="container">
+    <div class="sec-label">✦ <span class="ar-only">الأثر والانتشار</span><span class="fr-only">Impact</span></div>
+    <h2 class="sec-title" style="margin-bottom:36px;"><span class="ar-only">شارك المنصة مع أصدقائك</span><span class="fr-only">Partager la plateforme</span></h2>
+    <div class="impact-grid">
+      <div class="impact-card js-reveal"><span class="impact-icon">✅</span><div class="impact-num" id="cnt1">—</div><div class="impact-label"><span class="ar-only">اختبار مكتمل</span><span class="fr-only">Tests effectués</span></div></div>
+      <div class="impact-card js-reveal"><span class="impact-icon">⚖️</span><div class="impact-num" id="cnt2">—</div><div class="impact-label"><span class="ar-only">مقارنة أُجريت</span><span class="fr-only">Comparaisons</span></div></div>
+      <div class="impact-card js-reveal"><span class="impact-icon">📱</span><div class="impact-num" id="cnt3">—</div><div class="impact-label"><span class="ar-only">مشاركة عبر واتساب</span><span class="fr-only">Partages WhatsApp</span></div></div>
+      <div class="impact-card js-reveal"><span class="impact-icon">🇲🇦</span><div class="impact-num" data-target="8" id="cnt4">0</div><div class="impact-label"><span class="ar-only">أحزاب مُوثَّقة</span><span class="fr-only">Partis documentés</span></div></div>
+    </div>
+    <div class="share-section">
+      <h3><span class="ar-only">شارك المنصة مع أصدقائك 🇲🇦</span><span class="fr-only">Partager avec vos amis 🇲🇦</span></h3>
+      <p><span class="ar-only">ساعد الشباب المغربي على معرفة خياراتهم</span><span class="fr-only">Aidez les jeunes Marocains à connaître leurs options</span></p>
+      <div class="share-btns">
+        <button class="share-btn" onclick="shareNative()">↗ <span class="ar-only">مشاركة</span><span class="fr-only">Partager</span></button>
+        <button class="share-btn" onclick="copyLink()">🔗 <span class="ar-only">نسخ الرابط</span><span class="fr-only">Copier</span></button>
+        <a href="https://wa.me/?text=%D9%81%D9%8A%D9%86%20%D9%88%D8%A7%D9%82%D9%81%D9%8A%D9%86%D8%9F%3F%20%E2%80%94%20%D8%A7%D9%83%D8%AA%D8%B4%D9%81%20%D8%A3%D9%8A%20%D8%A7%D9%84%D8%A3%D8%AD%D8%B2%D8%A7%D8%A8%20%D9%8A%D8%AA%D9%88%D8%A7%D9%81%D9%82%20%D9%85%D8%B9%20%D9%82%D9%8A%D9%85%D9%83%20%F0%9F%87%B2%F0%9F%87%A6%20https%3A%2F%2Ffinwaqfin.netlify.app%2F" class="share-btn wa" target="_blank" rel="noopener">📱 <span class="ar-only">واتساب</span><span class="fr-only">WhatsApp</span></a>
+        <button class="share-btn ig-story-btn" onclick="shareInstagramStoryGeneral()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+          <span class="ar-only">قصة انستغرام</span><span class="fr-only">Story Instagram</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-logo">
+          <img src="logo-nav.png" class="fb-logo-icon" alt="فو">
+          <div>
+            <div class="fb-title">فين واقفين؟ · <bdi>Où en sont-ils&#8239;?</bdi></div>
+            <div class="fb-sub"><span class="ar-only">منصة التربية المدنية للشباب المغربي</span><span class="fr-only">Plateforme d'éducation civique</span></div>
+          </div>
+        </div>
+        <p><span class="ar-only">منصة رقمية تفاعلية تهدف إلى تمكين الشباب المغربي من المعرفة السياسية الموضوعية.</span><span class="fr-only">Plateforme numérique pour autonomiser les jeunes Marocains avec une connaissance politique objective.</span></p>
+      </div>
+      <div class="footer-col">
+        <h4><span class="ar-only">روابط سريعة</span><span class="fr-only">Liens rapides</span></h4>
+        <a href="#quiz"><span class="ar-only">الاختبار التفاعلي</span><span class="fr-only">Quiz</span></a>
+        <a href="#compare"><span class="ar-only">مقارنة الأحزاب</span><span class="fr-only">Comparer</span></a>
+        <a href="#parties"><span class="ar-only">ملفات الأحزاب</span><span class="fr-only">Partis</span></a>
+        <a href="#about"><span class="ar-only">من نحن</span><span class="fr-only">About</span></a>
+        <a href="privacy.html"><span class="ar-only">سياسة الخصوصية</span><span class="fr-only">Politique de confidentialité</span></a>
+      </div>
+      <div class="footer-col">
+        <h4><span class="ar-only">للتواصل</span><span class="fr-only">Contact</span></h4>
+        <a href="mailto:jalaleddine.ramdane@gmail.com">jalaleddine.ramdane@gmail.com</a>
+        <a href="#about"><span class="ar-only">حول المشروع</span><span class="fr-only">Le projet</span></a>
+      </div>
+    </div>
+    <div class="footer-disclaimers">
+      <div class="disclaimer"><span class="ar-only">هذه المنصة مستقلة وغير تابعة لأي حزب سياسي أو مؤسسة حكومية</span><span class="fr-only">Cette plateforme est indépendante et n'est affiliée à aucun parti politique.</span></div>
+      <div class="disclaimer"><span class="ar-only">جميع المعلومات مستقاة من البرامج الرسمية للأحزاب والوثائق العمومية</span><span class="fr-only">Toutes les informations proviennent des programmes officiels des partis.</span></div>
+      <div class="disclaimer"><span class="ar-only">هذه المنصة لأغراض تعليمية وتربوية بحتة</span><span class="fr-only">Cette plateforme est à des fins éducatives uniquement.</span></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 فين واقفين؟ — جلال الدين رمضان</span>
+      <span><span class="ar-only">مبادرة شبابية مغربية</span><span class="fr-only">Initiative jeunesse marocaine</span> 🇲🇦</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Firebase SDK (Realtime Database) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="fw-app.js"></script>
+<script>
+var _langFr = false;
+function toggleLang() {
+  _langFr = !_langFr;
+  document.body.classList.toggle('lang-fr', _langFr);
+  document.getElementById('langBtn').textContent = _langFr ? 'AR' : 'FR';
+  if (typeof renderTimeline === 'function') renderTimeline();
+  if (typeof loadPreviousResult === 'function') loadPreviousResult();
+}
+function toggleMenu() {
+  var m = document.getElementById('mobileMenu');
+  if (m) m.classList.toggle('open');
+}
+// Register service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>
